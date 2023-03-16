@@ -1,0 +1,21 @@
+#same path
+No, you can use a string variable to store the path. However, you need to make sure that the path is absolute and that it has the correct syntax. For example:
+
+Dim strPath As String
+
+strPath = Application.ActiveWorkbook.Path & "\fileName.pdf"
+
+ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=strPath
+
+Does this help?
+
+#transform into pdf
+Sure. The third line of code uses the ExportAsFixedFormat method to save the active sheet as a pdf file. The method takes several parameters, such as:
+
+Type: The type of file format to export. In this case, it is xlTypePDF.
+Filename: The name and path of the file to save. In this case, it is the string variable strPath that we defined earlier.
+Quality: The quality of the exported file. In this case, it is xlQualityStandard, which is the default value.
+IncludeDocProperties: A Boolean value that indicates whether to include document properties in the exported file. In this case, it is True, which means they are included.
+IgnorePrintAreas: A Boolean value that indicates whether to ignore any print areas set on the sheet. In this case, it is False, which means they are not ignored.
+OpenAfterPublish: A Boolean value that indicates whether to open the exported file after saving it. In this case, it is False, which means it is not opened.
+You can learn more about this method and its parameters here.
